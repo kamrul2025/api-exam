@@ -49,12 +49,13 @@ class RecipeListScreen extends StatelessWidget {
     final List recipes = data['recipes'];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Recipe List')),
+      appBar: AppBar(title: Text('Recipe List'), backgroundColor: Colors.blue),
       body: ListView.separated(
         itemCount: recipes.length,
         itemBuilder: (context, index) {
           final recipe = recipes[index];
           return ListTile(
+            trailing: Icon(Icons.add_shopping_cart),
             title: Text(recipe['title']),
             subtitle: Text(recipe['description']),
           );
